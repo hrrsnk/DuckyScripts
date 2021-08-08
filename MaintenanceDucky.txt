@@ -1,0 +1,45 @@
+REM This script is to help run basic mainenance on my families computers when I am not available
+REM Author: Harrison Kee (NerdKing13)
+
+REM *** Initial Delay *** 
+DELAY 2000
+
+REM *** Start Powershell as admin ***
+W
+STRING powershell
+MENU
+
+REM *** Select Run as administrator ***
+STRING a
+
+REM *** Say yes to UAC ***
+DELAY 1500
+ALT Y
+DELAY 500
+
+REM *** Activiating ability to run powershell scripts ***
+STRING Set-ExecutionPolicy unrestricted
+ENTER
+DELAY 300
+STRING A
+ENTER
+
+REM *** Install PSWindowsUpdate ***
+STRING Install-Module PSWindowsUpdate
+ENTER
+DELAY 300
+STRING A
+ENTER
+DELAY 500
+
+REM *** Get Updates and Install ***
+STRING Get-WindowsUpdate -AcceptAll -Install
+ENTER
+DELAY 2000
+
+REM *** Removing ability to run powershell scripts ***
+STRING Set-ExecutionPolicy restricted
+ENTER
+DELAY 300
+STRING A
+ENTER

